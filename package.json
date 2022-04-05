@@ -1,0 +1,19 @@
+{
+  "name": "a99-kochab",
+  "version": "0.0.1",
+  "description": "An application designed to display COVID data in North Carolina by County.",
+  "main": "index.html",
+  "scripts": {
+    "test": "node index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a99-kochab.git"
+  },
+  "author": "Team kochab",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a99-kochab/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a99-kochab#readme"
+}
