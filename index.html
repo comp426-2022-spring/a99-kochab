@@ -1,5 +1,6 @@
 <html>
     <head>
+        <!-- The CSS Styling here is mainly to make sure that stuff is the right size and centered -->
         <style>
             h1 {text-align: center;}
             p {text-align: center;}
@@ -17,29 +18,55 @@
             }
         </style>
 
-        <title>North Carolina COVID Tracker by County</title>
+        <title>North Carolina COVID Tracker by County</title> <!-- Text displayed on the tab at the top of the browser -->
     </head>
 
     <body>
 
         <br>
-        <h1>NC COVID by County</h1>
+        <h1>NC COVID by County</h1> <!-- Header for the site -->
 
+        <!-- Image of North Carolina -->
         <img src="NorthCarolina.png" alt="The State of North Carolina divided by its Counties">
 
         <br>
-        <div id="dropdown">
+
+        <!-- This is our dropdown menu, every "option" is a selectable county name -->
+        <div id="dropdown"> 
             <label for="county">Choose your County: </label>
-            <select name="county" id="county">
-                <option id="alamance">Alamance</option>
-                <option id="alexander">Alexander</option>
-                <option id="alleghany">Alleghany</option>
-                <option id="anson">Anson</option>
-                <option id="ashe">Ashe</option>
+            <select name="county" id="county" class="choice">
+                <option id="alamance" value="Alamance">Alamance</option>
+                <option id="alexander" value="Alexander">Alexander</option>
+                <option id="alleghany" value="Alleghany">Alleghany</option>
+                <option id="anson" value="Anson">Anson</option>
+                <option id="ashe" value="Ashe">Ashe</option>
             </select>
             <button type="button">See Data</button>
+            <br>
+            <br>
+            <div class="output"></div>
         </div>
+        
+        <!-- This section, coded in Javascript, uses the value for our options to display dynamic text -->
+        <script type="text/javascript"> 
+            function updateNow(evt){
+                if (evt.target.type == "button") {
+                    var div = evt.target.parentNode;
+                    var input = div.querySelector('.choice');
+                    var value = input.value;
+
+                    // This is what creates the text - if you press the button with Alamander selected, 'value' is "Alamander"
+                    // We need to use the 'value' (Selected County Name) to get the case counts from our database and add it to the text
+                    div.querySelector('.output').innerHTML = "The case count in " + value + " County is _______ cases per 100,000 residents.";
+                }
+            } 
+            addEventListener('click', updateNow);
+        </script>
 
     </body>
 
 </html>
+
+<script>
+
+</script>
