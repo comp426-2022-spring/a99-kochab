@@ -136,19 +136,57 @@
             <br>
             <br>
             <div class="output"></div>
+            <p>The address of the nearest health department is: <span id="add"></span><br />
+               Contact Info:<br />
+               Phone Number: <span id="phone"></span><br />
+               Website: <span id="website"></span><br />
+
+
+            </p>
         </div>
         
         <!-- This section, coded in Javascript, uses the value for our options to display dynamic text -->
-        <script type="text/javascript"> 
+        <script type="text/javascript">
+
+            const counties = ["Alamance","Albemarle", "Alexander","Alleghany","Anson","Ashe","Avery","Appalach","Beaufort","Bertie","Bladen","Brunswick","Buncombe","Burke","Cabarrus","Caldwell","Camden","Carteret",
+            "Caswell","Catawba","Chatham","Cherokee","Chowan","Clay","Cleveland","Columbus","Craven","Cumberland","Currituck","Dare","Davidson","Davie","Duplin","Durham","Edgecombe",
+            "Forsyth","Franklin","Gaston","Gates","Graham","Granville","Greene","Guilford","Halifax","Harnett","Haywood","Henderson","Hertford","Hoke","Hyde","Iredell","Jackson",
+            "Johnston","Jones","Lee","Lenoir","Lincoln","McDowell","Macon","Madison","Martin","Mecklenburg","Mitchell","Montgomery","Moore","Nash","New Hanover","Northampton","Onslow",
+            "Orange","Pamlico","Pasquotank","Pender","Perquimans","Person","Pitt","Polk","Randolph","Richmond","Robeson","Rockingham","Rowan","Rutherford","Sampson","Scotland",
+            "Stanly","Stokes","Surry","Swain","Toe","Transylvania","Tyrrell","Union","Vance","Wake","Warren","Washington","Watauga","Wayne","Wilkes","Wilson","Yadkin","Yancey"]
+
+          
+            
+            const covid_api = 'https://postman-data-api-templates.github.io/county-health-departments/api/north-carolina.json'
+            async function getCountyData(index){
+                const give_back = await fetch(covid_api)
+                const data = await give_back.json();
+                document.getElementById("add").textContent = data[index].address
+                document.getElementById("website").textContent = data[index].website
+                document.getElementById("phone").textContent = data[index].phone
+            }
+
+            
+
             function updateNow(evt){
                 if (evt.target.type == "button") {
                     var div = evt.target.parentNode;
                     var input = div.querySelector('.choice');
-                    var value = input.value;
+                    var value = input.value
+                    var ind
+
+                for(i = 0; i<counties.length; i++){
+                    if(counties[i] == value){
+                        ind = i
+                        break
+                    }
+                }
+
+                    getCountyData(ind)
 
                     // This is what creates the text - if you press the button with Alamander selected, 'value' is "Alamander"
                     // We need to use the 'value' (Selected County Name) to get the case counts from our database and add it to the text
-                    div.querySelector('.output').innerHTML = "The case count in " + value + " County is _______ cases per 100,000 residents.";
+                    div.querySelector('.output').innerHTML = "Here is some information about " + value + " County"
                 }
             } 
             addEventListener('click', updateNow);
