@@ -24,7 +24,7 @@ function sendFile(fname, contentType, req, res) {
 
 const server = http.createServer(function(req, res){
     if (req.url === "/") {
-        sendFile('index.html', 'text/html', req, res);
+        sendFile('mainPage.html', 'text/html', req, res);
     } else if (req.url === '/NorthCarolina.png') {
         sendFile('NorthCarolina.png', 'image/gif', req, res);
     } else {
@@ -37,7 +37,7 @@ server.listen(port, () =>{
     console.log(`Server running at port ${port}`)
 })
 
-// fs.readFile('./index.html', 'utf8', (err, data) => {
+// fs.readFile('./mainPage.html', 'utf8', (err, data) => {
 //     if (err) {
 //         console.error(err)
 //         return
