@@ -136,11 +136,14 @@
             <br>
             <br>
             <div class="output"></div>
-            <p><b>The address of the nearest health department is: </b><span id="add"></span><br />
-               <b>Contact Info: </b><br />
+            <p><b>The address of the nearest health department is: </b><span id="add"></span><br /><br />
+               <b><u>Contact Info</u></b><br />
                <b>Phone Number: </b><span id="phone"></span><br />
-               <b>Website: </b><span id="website"></span><br />
+               <b>Website: </b><a target="_blank" rel="noopener noreferrer" id="website"></a><br />
 
+               <b>Cases: </b><span id="cases"></span><br />
+               <b>Deaths: </b><span id="deaths"></span><br />
+               <b>Test Positivity Ratio: </b><span id="pos"></span><br />
 
             </p>
         </div>
@@ -155,7 +158,12 @@
             "Orange","Pamlico","Pasquotank","Pender","Perquimans","Person","Pitt","Polk","Randolph","Richmond","Robeson","Rockingham","Rowan","Rutherford","Sampson","Scotland",
             "Stanly","Stokes","Surry","Swain","Toe","Transylvania","Tyrrell","Union","Vance","Wake","Warren","Washington","Watauga","Wayne","Wilkes","Wilson","Yadkin","Yancey"]
 
-          
+            const countiesFr = ["Alamance","Albemarle", "Alexander","Alleghany","Anson","Ashe","Avery","Beaufort","Bertie","Bladen","Brunswick","Buncombe","Burke","Cabarrus","Caldwell","Camden","Carteret",
+            "Caswell","Catawba","Chatham","Cherokee","Chowan","Clay","Cleveland","Columbus","Craven","Cumberland","Currituck","Dare","Davidson","Davie","Duplin","Durham","Edgecombe",
+            "Forsyth","Franklin","Gaston","Gates","Graham","Granville","Greene","Guilford","Halifax","Harnett","Haywood","Henderson","Hertford","Hoke","Hyde","Iredell","Jackson",
+            "Johnston","Jones","Lee","Lenoir","Lincoln","McDowell","Macon","Madison","Martin","Mecklenburg","Mitchell","Montgomery","Moore","Nash","New Hanover","Northampton","Onslow",
+            "Orange","Pamlico","Pasquotank","Pender","Perquimans","Person","Pitt","Polk","Randolph","Richmond","Robeson","Rockingham","Rowan","Rutherford","Sampson","Scotland",
+            "Stanly","Stokes","Surry","Swain","Transylvania","Tyrrell","Union","Vance","Wake","Warren","Washington","Watauga","Wayne","Wilkes","Wilson","Yadkin","Yancey"]       
             
             const covid_api = 'https://postman-data-api-templates.github.io/county-health-departments/api/north-carolina.json'
             async function getCountyData(index){
@@ -163,13 +171,24 @@
                 const data = await give_back.json();
                 document.getElementById("add").textContent = data[index].address
                 document.getElementById("website").textContent = data[index].website
+                document.getElementById("website").href = data[index].website
                 document.getElementById("phone").textContent = data[index].phone
             }
 
-            
+            const covid_data_api = 'https://api.covidactnow.org/v2/county/NC.json?apiKey=0541377b26184056bf3d43905a8686ed'
+            async function getCountyDataFr(index){
+                const give_back = await fetch(covid_data_api)
+                const data = await give_back.json();
+                document.getElementById("cases").textContent = data[index].actuals.cases
+                document.getElementById("deaths").textContent = data[index].actuals.deaths
+                console.log(index)
+                document.getElementById("pos").textContent = data[index].metrics.testPositivityRatio
+            }
+
 
             function updateNow(evt){
                 if (evt.target.type == "button") {
+
                     var div = evt.target.parentNode;
                     var input = div.querySelector('.choice');
                     var value = input.value
@@ -182,7 +201,16 @@
                     }
                 }
 
+                for(i = 0; i<countiesFr.length; i++){
+                    if(countiesFr[i] == value){
+                        indFr = i
+                        break
+                    }
+                }
+
+
                     getCountyData(ind)
+                    getCountyDataFr(indFr)
 
                     // This is what creates the text - if you press the button with Alamander selected, 'value' is "Alamander"
                     // We need to use the 'value' (Selected County Name) to get the case counts from our database and add it to the text
