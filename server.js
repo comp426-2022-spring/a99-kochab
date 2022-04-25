@@ -12,7 +12,7 @@ const port = args.port || process.env.PORT || 5000
 function sendFile(fname, contentType, req, res) {
     res.writeHead(200, { 'Content-Type': contentType});
     fs.readFile(fname, function(error, data) {
-        if(error)   {  
+        if(error)   {
             res.writeHead(404);
             res.write('Error: File not Found');
         } else {
