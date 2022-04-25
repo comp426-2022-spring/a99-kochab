@@ -16,9 +16,52 @@
         </style>
 
         <title>North Carolina COVID Tracker by County</title> <!-- Text displayed on the tab at the top of the browser -->
+        <script type="module" src="/index.js"></script>
+
+        <style>
+            html,
+            body {
+                margin: 0;
+            }
+            
+            .top {
+                background: #4B9CD3;
+                height: 60px;
+                color: #000;
+                list-style: none;
+                text-align: right;
+                padding: 20px 0 0 0;
+                font-family: 'Arial', serif;
+            }
+            .top > li {
+                display: inline-block;
+                padding: 0 25px 0 25px;
+                font-size: 15px;
+            }
+            .top > li > a {
+                text-decoration: none;
+                color: #000;
+            }
+            .top > li > a:hover {
+                color: #c1c1c1;
+            }
+            .text {
+                color: #000;
+                float: left;
+                padding-left: 25px;
+                font-size: 32px;
+            }
+        </style>
     </head>
 
     <body>
+        <ul class="top">
+            <div class="text">
+                <strong>NC Covid County Dashboard</strong>
+            </div>
+            <!-- <li><a href="index.html"><button class="clear" onclick="logout()"><strong>Sign Out</strong></button></a></li> -->
+            <li><a href="/index.html" onclick="logout()"><strong>Sign Out</strong></a></li>
+        </ul>
 
         <br>
         <h1>NC COVID by County</h1> <!-- Header for the site -->

@@ -1,0 +1,43 @@
+
+
+<html>
+    <head>
+        <title>Firebase Login</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"/>
+        <script type="module" src="/index.js"></script>
+    </head>
+
+    <body>
+        <ul class="top">
+            <div class="text">
+                <strong>NC Covid County Dashboard</strong>
+            </div>
+            <!-- <li><a href="index.html"><button class="clear" onclick="logout()"><strong>Sign Out</strong></button></a></li> -->
+            <li></li>
+        </ul>
+        <div id="login_div" class="main-div">
+            <h3>Covid Dashboard SignUp</h3>
+            <input type="email" placeholder="Email..."  id="email_field"/>
+            <input type="password" placeholder="Password..." id="password_field"/>
+
+            <button onclick="signin()">SignIn to Account</button>
+
+            <h3>Covid Dashboard Login</h3>
+            <input type="email" placeholder="Email..."  id="email_login"/>
+            <input type="password" placeholder="Password..." id="password_login"/>
+
+            <button onclick="login()">Login to Account</button>
+            <!-- <a href="mainPage.html"><button onclick="login()">Login to Account</button></a> -->
+            <!-- <button onclick="login()" href="mainPage.html">Login to Account</button> -->
+
+        </div>
+        <div>WASSSUP</div>
+
+        <div id="user_div" class="loggedin-div">
+            <h3>Welcome User</h3>
+            <p style="color:green">Welcome to Covid Dashboard! You're currently logged in.</p>
+            <button onclick="logout()">Logout</button>
+        </div>    
+    </body>
+</html>

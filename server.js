@@ -7,7 +7,7 @@ const args = require('minimist')(process.argv.slice(2))
 args["port"]
 
 
-const port = args.port || process.env.PORT || 3000
+const port = args.port || process.env.PORT || 5000
 
 function sendFile(fname, contentType, req, res) {
     res.writeHead(200, { 'Content-Type': contentType});
@@ -24,9 +24,17 @@ function sendFile(fname, contentType, req, res) {
 
 const server = http.createServer(function(req, res){
     if (req.url === "/") {
-        sendFile('mainPage.html', 'text/html', req, res);
+        sendFile('index.html', 'text/html', req, res);
     } else if (req.url === '/NorthCarolina.png') {
         sendFile('NorthCarolina.png', 'image/gif', req, res);
+    } else if (req.url === '/style.css') {
+        sendFile('style.css', 'text/html', req, res);
+    } else if (req.url === '/index.js') {
+        sendFile('index.js', 'text/javascript', req, res);
+    } else if (req.url === '/mainPage.html') {
+        sendFile('mainPage.html', 'text/html', req, res);
+    } else if (req.url === '/index.html') {
+        sendFile('index.html', 'text/html', req, res);
     } else {
         res.writeHead(404);
         res.end('Error: Unsupported path');
