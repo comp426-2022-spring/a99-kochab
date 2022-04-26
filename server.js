@@ -22,6 +22,9 @@ function sendFile(fname, contentType, req, res) {
     })
 }
 
+// Logging Middleware
+
+
 const server = http.createServer(function(req, res){
     if (req.url === "/") {
         sendFile('index.html', 'text/html', req, res);
