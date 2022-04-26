@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/comp426-2022-spring/a99-kochab#readme",
   "dependencies": {
+    "express": "^4.18.0",
     "firebase": "^9.6.11",
     "minimist": "^1.2.6",
     "morgan": "^1.10.0"
