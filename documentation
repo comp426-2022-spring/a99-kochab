@@ -1,0 +1,65 @@
+Topic: Covid-19
+https://comp426.johndmart.in/a/99/
+https://covid19.ncdhhs.gov/dashboard/cases-and-deaths
+https://documenter.getpostman.com/view/11672223/TVCfV7fX#8ef25169-61be-649a-e013-a8160792a1a3 
+https://covid-19-apis.postman.com/ 
+
+Ideas/Breakdown:
+NC Statewide Data
+A NC Map visual which allows you to hover over each county to track COVID cases and other relevant data. 
+Clicking on each county redirects to that county’s COVID/public health website
+Have to make user accounts -> For each user, register the county. Tell the user what their county stats are, susceptibility to COVID, etc. Pu
+
+Website Overview:
+Covid Tracking -> One landing page? 
+Broken down by county
+COVID cases and test positivity rates
+
+
+Website Setup:
+
+TIMELINE:
+
+(3/29) - 
+Completed this meeting: 
+Basic planning, overall idea created 
+
+To do before next meeting (04/02, 10AM): 
+Finish assignments up to a04 
+Research details for ideas 
+Find open source code (find out if we can even use that -> Aakash is talking to the TA)
+Find a credible source of data (.gov website -> script which updates data??)
+To do for next meeting (04/02, 10AM):  
+Create a Github 
+Decide and assign roles 
+
+(4/5) - 
+Ryan created the NC state template with a dropdown for counties
+Action Items:
+Access the database and connect requests
+Log in page basics (Robert)
+What API should be used (Aakash)
+HTML CSS (Ryan)
+Pulling data from API (Ria) 
+Showing data on separate/current page (Nori)
+
+https://documenter.getpostman.com/view/10122604/TVCe29D4 
+
+API KEY: b1fc72fc0614425d8faabce25aee8057
+0541377b26184056bf3d43905a8686ed
+
+API Website: https://apidocs.covidactnow.org/#register 
+
+https://firebase.google.com/docs/auth/web/manage-users
+
+Meeting 4/21
+Working out issues with Login - API now retrieves County Information
+
+FINAL MEETING 4/25
+Robert - Login styling
+Nori - endpoints
+Ryan - logging
+
+Login is fully functional, API COVID data pulls are successful and integrated into button push text
+
+4/26 Morgan Logging to accesslog is functions
