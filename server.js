@@ -34,10 +34,12 @@ function sendFile(fname, contentType, req, res) {
 const WRITESTREAM = fs.createWriteStream('accesslog', { flags: 'a' })
 var logger = morgan('combined', { stream: WRITESTREAM })
 
+
 const server = http.createServer(function(req, res){
     logger(req, res, function (err) {
         if (req.url === "/") {
             sendFile('index.html', 'text/html', req, res);
+            WRITESTREAM.write('User has accessed the login page \n')
         } else if (req.url === '/NorthCarolina.png') {
             sendFile('NorthCarolina.png', 'image/gif', req, res);
         } else if (req.url === '/northcarolinawelcome.jpeg') {
@@ -48,8 +50,10 @@ const server = http.createServer(function(req, res){
             sendFile('index.js', 'text/javascript', req, res);
         } else if (req.url === '/mainPage.html') {
             sendFile('mainPage.html', 'text/html', req, res);
+            WRITESTREAM.write('User has logged in \n')
         } else if (req.url === '/index.html') {
             sendFile('index.html', 'text/html', req, res);
+            WRITESTREAM.write('User has logged out \n')
         } else {
             res.writeHead(404);
             res.end('Error: Unsupported path');
