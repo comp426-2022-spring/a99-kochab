@@ -13,3 +13,15 @@
 ::1 - - [28/Apr/2022:19:16:42 +0000] "GET /mainPage.html HTTP/1.1" 200 - "http://localhost:3000/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
 ::1 - - [28/Apr/2022:19:16:42 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/mainPage.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
 ::1 - - [28/Apr/2022:19:16:42 +0000] "GET /NorthCarolina.png HTTP/1.1" 200 - "http://localhost:3000/mainPage.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+User has logged out 
+::1 - - [30/Apr/2022:00:18:36 +0000] "GET /index.html HTTP/1.1" 200 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+::1 - - [30/Apr/2022:00:18:36 +0000] "GET /style.css HTTP/1.1" 200 - "http://localhost:3000/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+::1 - - [30/Apr/2022:00:18:36 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+User has logged in 
+::1 - - [30/Apr/2022:00:18:51 +0000] "GET /mainPage.html HTTP/1.1" 200 - "http://localhost:3000/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+::1 - - [30/Apr/2022:00:18:51 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/mainPage.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+::1 - - [30/Apr/2022:00:18:51 +0000] "GET /NorthCarolina.png HTTP/1.1" 200 - "http://localhost:3000/mainPage.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+User has logged out 
+::1 - - [30/Apr/2022:00:18:56 +0000] "GET /index.html HTTP/1.1" 200 - "http://localhost:3000/mainPage.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+::1 - - [30/Apr/2022:00:18:56 +0000] "GET /index.js HTTP/1.1" 200 - "http://localhost:3000/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+::1 - - [30/Apr/2022:00:18:56 +0000] "GET /style.css HTTP/1.1" 200 - "http://localhost:3000/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
